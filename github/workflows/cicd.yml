@@ -20,5 +20,4 @@ jobs:
       run: docker build -t cicd-pipeline .
 
     - name: Push your Docker Image
-
       run: docker push kene38/cicd-pipeline1:latest 
