@@ -16,11 +16,12 @@ jobs:
           echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
 
     - name: Login to Docker
-      env: 
-        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-   
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      env:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+            echo "DOCKER_USERNAME is set"
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 
     - name: Build the Docker image
