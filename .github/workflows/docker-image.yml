@@ -19,8 +19,7 @@ jobs:
       # env:
       #       DOCKER_USERNAME: Kene38
       #       DOCKER_PASSWORD: Ihifix@Docker281
-      run:
-            docker login -u Kene38 -p Ihifix@Docker281
+      run: docker login -u kene38 -p Ihifix@Docker281
 
 
     - name: Build the Docker image
