@@ -1,18 +1,14 @@
-name: Docker Image CI
+name: Docker Image CICD
 
 on:
   push:
     branches: main
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
-
     - name: Login to Docker
       env: 
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -24,4 +20,5 @@ jobs:
       run: docker build -t cicd-pipeline .
 
     - name: Push your Docker Image
+
       run: docker push kene38/cicd-pipeline1:latest 
