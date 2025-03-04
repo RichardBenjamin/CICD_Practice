@@ -1,4 +1,4 @@
-name: Docker Image CICD
+name: Docker Image CI
 
 on:
   push:
@@ -10,16 +10,18 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # - name: Debug Secrets
-    #   run: |
-    #       echo "DOCKER_USERNAME: $DOCKER_USERNAME"
-    #       echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
+    - name: Debug Secrets
+      run: |
+          echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+          echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
 
     - name: Login to Docker
-      # env:
-      #       DOCKER_USERNAME: Kene38
-      #       DOCKER_PASSWORD: Ihifix@Docker281
-      run: docker login -u kene38 -p Ihifix@Docker281
+      env:
+            DOCKER_USERNAME: kene38
+            DOCKER_PASSWORD: Ihifix@Docker281
+      run: |
+            echo "DOCKER_USERNAME is set"
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 
     - name: Build the Docker image
