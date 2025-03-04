@@ -10,17 +10,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Debug Secrets
-      run: |
-          echo "DOCKER_USERNAME: $DOCKER_USERNAME"
-          echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
+    # - name: Debug Secrets
+    #   run: |
+    #       echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+    #       echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
 
     - name: Login to Docker
-      env:
-            DOCKER_USERNAME: Kene38
-            DOCKER_PASSWORD: Ihifix@Docker281
-      run: |
-            echo "DOCKER_USERNAME is set"
+      # env:
+      #       DOCKER_USERNAME: Kene38
+      #       DOCKER_PASSWORD: Ihifix@Docker281
+      run:
             docker login -u Kene38 -p Ihifix@Docker281
 
 
