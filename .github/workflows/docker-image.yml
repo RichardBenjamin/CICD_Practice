@@ -16,8 +16,8 @@ jobs:
 
 
     - name: Build the Docker image
-      run: docker build -t cicd-pipeline .
+      run: docker build -t cicd-pipeline1 .
 
     - name: Push your Docker Image
-      # run: docker push kene38/cicd-pipeline1
-      run: docker push kene38/cicd-pipeline1:tagname
+      run: docker push kene38/cicd-pipeline1
+
