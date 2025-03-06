@@ -31,7 +31,8 @@ jobs:
         run: sudo docker pull kene38/cicd-pipeline1:latest
 
       - name: Delete Old Container
-        run: sudo rm -f Docker-Image-container 
+        run: sudo docker rm -f Docker-Image-container 
+        
 
       - name: Run Docker Image
         run: sudo docker run -d -p 8000:8000 --name Docker-Image-container kene38/cicd-pipeline1
