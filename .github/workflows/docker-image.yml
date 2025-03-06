@@ -35,6 +35,6 @@ jobs:
         
 
       - name: Run Docker Image
-        run: sudo docker run -d -p 8000:8000 --name Docker-Image-container kene38/cicd-pipeline1
+        run: sudo docker run -d -p 8080:8080 --name Docker-Image-container kene38/cicd-pipeline1
 
 
