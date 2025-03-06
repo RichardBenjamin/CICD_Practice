@@ -1,23 +1,23 @@
-name: Docker Image CICD
+# name: Docker Image CICD
 
-on:
-  push:
-    branches: main
+# on:
+#   push:
+#     branches: main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Login to Docker
-      env: 
-        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Login to Docker
+#       env: 
+#         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+#         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+#       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 
-    - name: Build the Docker image
-      run: docker build -t cicd-pipeline .
+#     - name: Build the Docker image
+#       run: docker build -t cicd-pipeline .
 
-    - name: Push your Docker Image
-      run: docker push kene38/cicd-pipeline1:latest 
+#     - name: Push your Docker Image
+#       run: docker push kene38/cicd-pipeline1:latest 
